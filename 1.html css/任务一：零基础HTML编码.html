@@ -19,10 +19,10 @@
 	    <h2>文章一级标题</h2>
 	    <h3>文章二级标题</h3>
 	  </hgroup>
-	  <span>
+	  <header>
 	    <p>文章作者&nbsp;文章发表时间</p>
-	  </span>
-	  <section>  
+	  </header>
+	  <section> 
 	    <p>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，<a href="http://ife.baidu.com/">这里有一个链接链到百度前端技术学院</a>，这是一个很长很长的段落，<strong>这里有个粗体字</strong>，这是一个很长很长的段落。</p>
 	    <p>换行了</p>
 	    <figure>
@@ -35,9 +35,9 @@
     		<h2>另一篇文章一级标题</h2>
     		<h3>文章二级标题</h3>
     	</hgroup>
-    	<span>
+    	<header>
     		<p>文章作者&nbsp;文章发表时间</p>
-    	</span>
+    	</header>
     	<section>
     		<p>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，<a href="http://ife.baidu.com/">这里有一个链接链到百度前端技术学院</a>，这是一个很长很长的段落，<strong>这里有个粗体字</strong>，这是一个很长很长的段落。</p>
 	        <p>换行了</p>
@@ -66,12 +66,12 @@
     </article>
     <article>
     	<hgroup>
-    		<h2>最后一片文章一级标题</h2>
+    		<h2>最后一篇文章一级标题</h2>
     		<h3>文章二级标题</h3>
     	</hgroup>
-    	<span>
+    	<header>
     		<p>文章作者&nbsp;文章发表时间</p>
-    	</span>
+    	</header>
     	<section>
     	  <ol>
     	    <li>排名1</li>
@@ -79,36 +79,40 @@
     	    <li>排名3</li>
     	  </ol>		
     	  <table border="1">
-    	  	<thead>下面是一个表格，给表格加了一个border="1"好让你看出是一个表格</thead>
-    	  	<tr>
-    	  	  <th>表头</th>
-    	  	  <th>表头</th>
-    	  	  <th>表头</th>
-    	  	</tr>
-    	  	<tr>
+    	  	<header>下面是一个表格，给表格加了一个border="1"好让你看出是一个表格</header>
+            <thead>
+    	  	  <tr>
+    	  	    <th>表头</th>
+    	  	    <th>表头</th>
+    	  	    <th>表头</th>
+    	  	  </tr>
+            </thead>
+            <tbody>
+    	  	  <tr>
     	  		<td>表内容单元格</td>
     	  		<td>表内容单元格</td>
     	  		<td><a href="">操作</a></td>
-    	  	</tr>
-    	  	<tr>
+    	  	  </tr>
+    	  	  <tr>
     	  		<td>表内容单元格</td>
     	  		<td>表内容单元格</td>
     	  		<td><a href="">操作</a></td>
-    	  	</tr>
-    	  	<tr>
+    	  	  </tr>
+    	  	  <tr>
     	  		<td>表内容单元格</td>
     	  		<td>表内容单元格</td>
     	  		<td><a href="">操作</a></td>
-    	  	</tr>
-    	  	<tr>
+    	  	  </tr>
+    	  	  <tr>
     	  		<td>表内容单元格</td>
     	  		<td>表内容单元格</td>
     	  		<td><a href="">操作</a></td>
-    	  	</tr>
-    	  	<tr>
+    	  	  </tr>
+    	  	  <tr>
     	  		<td>总计</td>
     	  		<td colspan="2">1000</td>
-    	  	</tr>
+    	  	  </tr>
+            </tbody>
     	  </table>
     	</section>
     </article>
@@ -143,7 +147,7 @@
     	</form>
     </aside>
     <footer>
-    	<small>版权所有&copy;</small>
+    	<p>版权所有&copy;</p>
     </footer>
 </body>
 </html>
