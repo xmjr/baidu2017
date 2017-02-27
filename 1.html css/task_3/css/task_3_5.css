@@ -1,0 +1,79 @@
+/*大容器：定义布局flex布局*/
+.container {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	min-width: 500px;
+	margin: 20px;
+	overflow: auto;
+	background-color: #eee;
+}
+
+/*中间部分:占据剩余空间，但height要设置为100%，而不能是auto*/
+.main {
+	-webkit-box-flex: 1;
+	    -webkit-flex: 1;
+	        -ms-flex: 1;
+	            flex: 1;
+	height: 100%;
+	margin: 20px 0;
+	padding: 0 20px;
+	border: 1px solid #999;
+    background-color: #fff;
+}
+
+
+/*左侧部分*/
+.left {
+    -webkit-order: -1;
+            order: -1;
+	-webkit-box-sizing: border-box;
+            box-sizing: border-box;
+	width: 200px;
+	height: 100%;
+	margin: 20px;
+	border: 1px solid #999;
+    background-color: #fff;
+}
+.left figure {
+	float: left;
+	margin: 20px;
+	width: 80px;
+	height: 80px;
+	background-color: #eee;
+	border: 1px solid #999;
+}
+.left img {
+	width: 100%;
+	height: 100%;
+}
+
+.left p {
+	margin-top: 20px;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+/*右侧部分*/
+.right {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 120px;
+  height: 100%;
+  margin: 20px;
+  border: 1px solid #999;
+  background-color: #fff;
+}
+.right figure {
+	text-align: center;
+	margin: 20px auto;
+	width: 80px;
+	height: 80px;
+	background-color: #eee;
+	border: 1px solid #999;
+}
+.right img {
+	width: 100%;
+	height: 100%;
+}
