@@ -1,0 +1,169 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/*表格*/
+table {
+	margin:20px auto;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+th, td {
+	border: 2px solid #fff;
+}
+th {
+	color: #fff;
+	background: #000;
+}
+tr:nth-of-type(odd) {
+  background: #999;
+}
+tr:nth-of-type(2),
+tr:nth-of-type(3),
+tr:nth-of-type(4) {
+	color: red;
+}
+
+/*表单--输入框*/
+input {
+  margin-left: 100px;
+	width: 100px;
+	height: 20px;
+	border: 1px solid #999;
+	-webkit-transition: width 0.4s ease-in-out;
+	     -o-transition: width 0.4s ease-in-out;
+	        transition: width 0.4s ease-in-out;
+}
+
+input:focus {
+	width: 200px;
+	border: 2px solid #0f0;
+	outline: 0;
+}
+
+/*banner栏*/
+.main {
+	position: relative;
+	margin: 50px 500px;
+	width: 400px;
+	height: 200px;
+	font-size: 0;
+	overflow: hidden;
+}
+.banner {
+	position: relative;
+	left: 0;
+	width: 1200px;
+	height: 100%;
+}
+.banner_1 {
+	position: absolute;
+	left: 0;
+	width: 400px;
+	height: 100%;
+	background: green;
+}
+.banner_2 {
+	position: absolute;
+	left: 400px;
+  width: 400px;
+	height: 100%;
+	background: red;
+}
+.banner_3 {
+	position: absolute;
+	left: 800px;
+  width: 400px;
+	height: 100%;
+	background: yellow;
+}
+
+.btn_1 {
+	position: absolute;
+	bottom: 0;
+	right: 82px;
+	width: 40px;
+	height: 40px;
+	margin-left: 5px;
+	font-size: 24px;
+	text-align: center;
+	line-height: 40px;
+	background: orange;
+	z-index: 10;
+}
+
+.btn_2 {
+	position: absolute;
+	bottom: 0;
+	right: 41px;
+	width: 40px;
+	height: 40px;
+	margin-left: 5px;
+	font-size: 24px;
+	text-align: center;
+	line-height: 40px;
+	background: orange;
+	z-index: 10;
+}
+
+.btn_3 {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 40px;
+	height: 40px;
+	margin-left: 5px;
+	font-size: 24px;
+	text-align: center;
+	line-height: 40px;
+	background: orange;
+	z-index: 10;
+}
+
+
+.btn_2:hover~.banner {
+	left: -400px;
+	animation: mysecond 2s linear;
+}
+.btn_3:hover~.banner {
+	left: -800px;
+	animation:  mythird 2s linear;
+}
+
+@keyframes mysecond {
+	0% {
+		left: 0;
+	}
+	25% {
+		left: -100px;
+	}
+	50% {
+		left: -200px;
+	}
+	75% {
+		left: -300px;
+	}
+	100% {
+		left: -400px;
+	}
+}
+
+@keyframes mythird {
+	0% {
+		left: -400px;
+	}
+	25% {
+		left: -500px;
+	}
+	50% {
+		left: -600px;
+	}
+	75% {
+		left: -700px;
+	}
+	100% {
+		left: -800px;
+	}
+}
