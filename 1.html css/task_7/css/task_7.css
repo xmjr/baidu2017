@@ -428,11 +428,47 @@ nav ul li:nth-child(5):hover~.move {
 }
 
 .page4 .right {
+	position: relative;
 	margin-left: 68%;
 	width: 32%;
 	height: 560px;
 	text-align: center;
+	overflow: hidden;
 }
+/*
+.page4 .right .radio {
+	position: absolute;
+	margin-top: 400px;
+	margin-left: 50%;
+	transform: translateX(-50%);
+	text-align: center;
+	z-index: 10;
+}
+.radio a {
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	margin: 0 10px;
+	border-radius: 50%;
+	border: 1px solid #aaaaaa;
+	background: #fff;
+}
+#banner1 {
+	width: 100%;
+	height: 100%;
+  background: red;
+}
+#banner2 {
+		width: 100%;
+	height: 100%;
+  background: yellow;
+}
+#banner3 {
+		width: 100%;
+	height: 100%;
+  background: green;
+}
+*/
 
 /*page5*/
 .page5 {
@@ -639,6 +675,7 @@ footer .cell_1 input[type="submit"] {
 	left: -10px;
 	width: 80px;
 	height: 40px;
+	vertical-align: top;
 	color: #fff;
   font-size: 15px;
   font-weight: 700;
