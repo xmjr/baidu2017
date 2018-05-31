@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>简版浮出层</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		/*页面主页*/
+		.main {width: 100%;}
+		header {
+			margin: 10px auto;
+			width: 80%;
+			height: 50px;
+			background: yellow;
+		}
+		#login {
+			margin-left: 10%;
+			width: 100px;
+			height: 50px;
+			line-height: 50px;
+			color: #999;
+			text-align: center;
+			cursor: pointer;
+		}
+		#login:hover {
+			color: #fff;
+			background: orange;
+		}
+		/*遮罩层*/
+		#shade {
+			position: fixed;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(0,0,0,0.1);
+			z-index: 1;
+			display: none;
+		}
+		/*浮出层*/
+		#prompt {
+			position: fixed;
+			margin: auto;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			width: 300px;
+			height: 200px;
+			border: 2px solid #999;
+			background: #fff;
+			z-index: 3;
+			display: none;
+		}
+		#prompt .header {
+			height: 50px;
+		}
+		#prompt .header p {
+			width: 100%;
+			line-height: 40px;
+			font-size: 18px;
+			text-indent: 1em;
+		}
+		#btn {
+			float: right;
+			margin: 5px;
+			width: 30px;
+			height: 30px;
+			color: orange;
+			background: #fff;
+			border: 1px solid orange;
+			border-radius: 5px;
+			cursor: pointer;
+			outline: none;
+		}
+		#btn:hover {
+			color: #fff;
+			background: orange;
+		}
+		form {
+			padding: 10px 15% 0;
+		}
+		form input {
+			width: 100%;
+			height: 30px;
+			margin: 5px 0;
+			border-radius: 3px;
+			border: 1px solid rgba(0,0,0,0.25);
+			outline: none;
+		}
+		form input:focus{
+      border-color: #66afe9;
+    }
+    form input[type="text"],
+    form input[type="password"]{
+      text-indent: 1em;
+    }
+    form input[type="button"]{
+      background: #0275d8;
+      color: #fff;
+      border: 1px solid rgba(0, 0, 0, .15);
+      outline: none;
+    }
+	</style>
+</head>
+<body>
+	<div class="main">
+		<header><div id="login">登录</div></header>
+	</div>
+	<div id="shade"></div>
+	<div id="prompt">
+		<div class="header">
+		  <p>登录<input id="btn" type="button" value="X"></p>
+		</div>
+		<form>
+			<input type="text" placeholder="请输入用户名">
+			<input type="password" placeholder="请输入密码">
+			<input type="button" value="登录">
+		</form>
+	</div>
+	<script>
+		// 获取元素对象
+		function $(el) {
+			return document.getElementById(el);
+		}
+		// 点击“登录”时，遮罩层、浮出层可见
+		$("login").onclick = function() {
+			$("shade").style.display = "block";
+			$("prompt").style.display = "block";
+		}
+		// 点击遮罩层/关闭按钮时，遮罩层和浮出层不可见
+		$("shade").onclick = $("btn").onclick = function() {
+			$("shade").style.display = "none";
+			$("prompt").style.display = "none";
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>任务二：表单（二）多个表单项的动态校验</title>
+	<style>
+	  form {
+	  	position: relative;
+	  	margin: 50px auto;
+	  	width: 600px;
+	  	overflow: hidden;
+	  }
+	  div {
+	  	margin-bottom: 20px;
+	  	overflow: hidden;
+	  }
+		label {
+			position: relative;
+			float: right;
+			right: 500px;
+			font-weight: bold;
+		}
+		input[type="text"] {
+			margin-left: 120px;
+			width: 400px;
+			height: 30px;
+			border: 1px solid #999;
+			border-radius: 5px;
+		  text-indent: 10px;
+			outline: 0;
+		}
+		input[type="text"]:focus {
+			border: 1px solid #167fa7;
+		}
+		p {
+			display: none;
+			margin-left: 120px;
+			margin-top: 10px;
+			font-size: 14px;
+			color: #999;
+		}
+		input[type="button"] {
+			margin-left: 444px;
+			width: 80px;
+			height: 30px;
+			border: 0;
+			border-radius: 5px;
+			color: #fff;
+			background: #167fa7;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<form action="get">
+	<div>
+		<label for="name">名称</label>
+		<input type="text" id="name">
+		<p id="name_tip">必填，长度为4~16个字符</p>
+	</div>
+	<div>
+		<label for="password">密码</label>
+		<input type="text" id="password">
+		<p id="password_tip">必填，长度为4~16个字符</p>
+	</div>
+	<div>
+		<label for="password_confirm">密码确认</label>
+		<input type="text" id="confirm">
+		<p id="confirm_tip">再次输入相同的密码</p>
+	</div>
+	<div>
+		<label for="email">邮箱</label>
+		<input type="text" id="email">
+		<p id="email_tip">请输入您的常用邮箱</p>
+	</div>
+	<div>
+		<label for="telephone">手机</label>
+		<input type="text" id="telephone">
+		<p id="email_tip">请输入您的手机号码</p>
+	</div>
+	<div>
+		<input type="button"  id="button" value="提交">
+	</div>
+	</form>
+	<script>
+	window.onload = function() {
+		var btn = document.getElementById("button");
+		var name = document.getElementById("name");
+		var nameTip = document.getElementById("name_tip");
+
+		name.onfocus = function() {
+			nameTip.style.display = "block";
+		}
+
+		name.onblur = function() {
+				nameTip.style.display = "block";
+
+				// 对双字符（中文、中文字符）进行替换，再计算字符长度
+				var len = name.value.replace(/[^\x00-\xff]/g,"aa").length; 
+				if(name.value.indexOf(" ")>-1) {
+					name.style.border = "1px solid red";
+					nameTip.style.color = "red";
+					nameTip.innerHTML = "姓名不能含有空格";
+				} else if(len==0){
+					name.style.border = "1px solid red";
+					nameTip.style.color = "red";
+					nameTip.innerHTML = "姓名不能为空";
+				} else if(len>3 && len<17) {
+					name.style.border = "1px solid #90ee90";
+					nameTip.style.color = "#90ee90";
+					nameTip.innerHTML = "名称格式正确";
+				} else {
+					name.style.border = "1px solid red";
+					nameTip.style.color = "red";
+					nameTip.innerHTML = "长度为4~16个字符";
+				}
+				
+			}
+	}
+	</script>
+</body>
+</html>

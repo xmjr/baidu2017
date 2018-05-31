@@ -1,0 +1,244 @@
+body {
+	font-family: "Helvetica Neue",Helvetica,Arial,"PingFang SC","Hiragino Sans GB","Heiti SC","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;
+}
+
+.section {
+	font: 18px "Microsoft Yahei"; 
+	color: #fff;
+	text-align: center; 
+}
+
+.section h3 {
+	margin-bottom: 60px;
+	font-size: 23px;
+	font-weight: 500;
+}
+
+/*第一屏：首页*/
+#first figure {
+	position: relative;
+	margin: 0 auto 40px;
+	width: 200px;
+	height: 200px;
+	overflow: hidden;
+	border-radius: 100%;
+}
+#first figure img {
+	width: 200px;
+	height: 200px;
+}
+#first hr {
+	margin: -40px auto 40px;
+	width: 40%;
+	height: 1px;
+	background: rgba(255, 255, 255, 0.5);
+	border: none;
+}
+
+/*第二屏：关于我*/
+#second ul {
+	margin: 0;
+	padding: 0;
+}
+#second ul li {
+	display: inline-block;
+	margin: 0 10px;
+	width: 200px;
+	height: 200px;
+	text-align: center;
+}
+#second ul li .img {
+	position: relative;
+	margin: 0 auto;
+	width: 100px;
+	height: 100px;
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 100%;
+	-webkit-transition: all 0.3s ease-in;
+	        transition: all 0.3s ease-in;
+}
+#second ul li .img:hover {
+	background: rgba(255, 255, 255, 0.3);
+	-webkit-transform: scale(1.1);
+	        transform: scale(1.1);
+}
+#second img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 50px;
+	height: 50px;
+	-webkit-transform: translate(-50%,-50%);
+	        transform: translate(-50%,-50%);
+}
+
+/*第三屏：擅长技术*/
+
+
+/*第四屏：*/
+.banner {
+	position: relative;
+	margin: 0 auto;
+	width: 600px;
+	height: 300px;
+	overflow: hidden;
+	background: #f0d3c3;
+	border-radius: 10px;
+	-webkit-box-shadow: 0 0 2px 5px rgba(0, 0, 0, 0.2);
+	        box-shadow: 0 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.banner>ul {
+	position: absolute;
+	width: 400%;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+.banner>ul li {
+	float: left;
+	width: 600px;
+	height: 100%;
+}
+.banner .banner_page {
+	width: 600px;
+	height: 300px;
+	padding-top: 16px;
+	padding-left: 120px;
+	font-size: 18px;
+	line-height: 18px;
+	text-align: left;
+	color: #000;
+}
+.banner_page h4 {
+	font-size: 20px;
+	color: #945c4c;
+}
+.banner_page p span {
+	font-size: 16px;
+	color: #945c4c;
+}
+
+/*圆点按钮*/
+.banner ol {
+  position: absolute;
+	left: 50%;
+	bottom: 10px;
+	margin-left: -40px;
+	width: 60px;
+	height: 20px;
+	padding: 0 10px;
+	border-radius: 10px;
+	list-style: none;
+}
+.banner ol li {
+	float: left;
+	margin: 5px 5px;
+	width: 10px;
+	height: 10px;
+	background: rgba(0,0,0,0.5);
+	border-radius: 50%;
+	cursor: pointer;
+}
+.banner ol .current {
+	background: rgba(0,0,0,1);
+}
+
+/*左右两侧的隐藏图标*/
+.banner i {
+	position: absolute;
+	top: 50%;
+	margin-top: -30px;
+	display: none;
+	width: 25px;
+	height: 60px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.banner .left {
+	left: 20px;
+	background: url("../images/left_right.png") no-repeat 0 0px;
+}
+.banner .right {
+	right: 20px;
+	background: url("../images/left_right.png") no-repeat 0 -56px;
+}
+.banner .left:hover,
+.banner .right:hover {
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+/*第五屏：作品集*/
+.production {
+	margin: 0 10%;
+}
+.works {
+	position: relative;
+	margin: 5px;
+	display: inline-block;
+	width: 250px;
+	height: 300px;
+	overflow: hidden;
+	background: #fff;
+	border-radius: 5px;
+	text-decoration: none;
+	-webkit-transition: all ease-in-out 0.4s;
+		      transition: all ease-in-out 0.4s;
+
+}
+.works:hover {
+	-webkit-box-shadow: 0 0px 16px #c3c3c3;
+          box-shadow: 0 0px 16px #c3c3c3;
+}
+.works:hover .hid {
+	opacity: 1;
+}
+.works:hover img {
+	transform: scale(1.2);
+}
+.works:hover .text {
+	color: #00daf5;
+}
+
+.over {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 1;
+	width: 250px;
+	height: 260px;
+	overflow: hidden;
+	border-radius: 5px;
+}
+.over .hid {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 2;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.5) url("../images/link.png") no-repeat center / 15%;
+	-webkit-transition: all ease-in-out 0.4s;
+	        transition: all ease-in-out 0.4s;
+	opacity: 0;
+}
+.over img {
+	-webkit-transition: all ease-in-out 0.4s;
+		      transition: all ease-in-out 0.4s;
+}
+.text {
+	position: absolute;
+	top: 260px;
+	left: 0;
+	width: 100%;
+	height: 40px;
+	font-size: 16px;
+	line-height: 40px;
+	text-align: center;
+	color: #000;
+}
+
+/*第六屏：联系我*/
+address {
+	margin: 50px auto 0;
+	color: #333;
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>任务一：表单（一）单个表单项的检验</title>
+	<style>
+		form {
+			position: relative;
+			margin: 30px auto;
+			width: 600px;
+		}
+		label {
+			font-weight: bold;
+			margin-right: 30px;
+			color: #666;
+		}
+		#name {
+			height: 50px;
+			width: 400px;
+			margin-right: 20px;
+			border: 1px solid #999;
+			border-radius: 5px;
+			font-size: 24px;
+			text-indent: 10px;
+			outline: none;
+		}
+		#point {
+			margin-top: 10px;
+			margin-left: 65px;
+			font-size: 20px;
+			color: #999;
+		}
+		#button {
+			height: 50px;
+			width: 90px;
+			border: 0;
+			border-radius: 5px;
+			color: #fff;
+			font-size: 24px;
+			font-weight: bold;
+			background: #167fa7;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<form action="">
+		<label for="name">名称</label>
+		<input type="text" id="name">
+		<input type="button" id="button" value="验证">
+		<div id="point">必填，长度为4~16个字符</div>
+	</form>
+	<script>
+
+			var btn = document.getElementById("button");
+			var point = document.getElementById("point");
+
+			btn.onclick = function() {
+				var name = document.getElementById("name");
+
+				// 对双字符（中文、中文字符）进行替换，再计算字符长度
+				var len = name.value.replace(/[^\x00-\xff]/g,"aa").length; 
+
+				if(name.value.indexOf(" ")>-1) {
+					name.style.border = "1px solid red";
+					point.style.color = "red";
+					point.innerHTML = "姓名不能包含空格";
+				} else if(len==0){
+					name.style.border = "1px solid red";
+					point.style.color = "red";
+					point.innerHTML = "姓名不能为空";
+				} else if(len>3 && len<17) {
+					name.style.border = "1px solid #90ee90";
+					point.style.color = "#90ee90";
+					point.innerHTML = "名称格式正确";
+				} else {
+					name.style.border = "1px solid red";
+					point.style.color = "red";
+					point.innerHTML = "长度为4~16个字符";
+				}
+				
+			}
+	</script>
+</body>
+</html>

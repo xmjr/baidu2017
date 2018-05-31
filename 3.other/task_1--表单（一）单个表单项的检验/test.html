@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>任务一：表单（一）单个表单项的检验</title>
+	<style>
+		form {
+			position: relative;
+			margin: 30px auto;
+			width: 600px;
+		}
+		label {
+			font-weight: bold;
+			margin-right: 30px;
+			color: #666;
+		}
+		#name {
+			height: 50px;
+			width: 400px;
+			margin-right: 20px;
+			border: 1px solid #999;
+			border-radius: 5px;
+			font-size: 24px;
+			text-indent: 10px;
+			outline: none;
+		}
+		#point {
+			margin-top: 10px;
+			margin-left: 65px;
+			font-size: 20px;
+			color: #999;
+		}
+		#button {
+			height: 50px;
+			width: 90px;
+			border: 0;
+			border-radius: 5px;
+			color: #fff;
+			font-size: 24px;
+			font-weight: bold;
+			background: #167fa7;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<form action="">
+		<label for="name">名称</label>
+		<input type="text" id="name">
+		<input type="button" id="button" value="验证">
+		<div id="point">必填，长度为4~16个字符</div>
+	</form>
+	<script>
+
+			var btn = document.getElementById("button");
+			var point = document.getElementById("point");
+
+			btn.onclick = function() {
+			  var text = document.getElementById("name");
+				if(text.value=="") {
+					text.style.border = "1px solid red";
+					point.style.color = "red";
+					point.innerHTML = "姓名不能为空";
+				} else {
+					test(text.value);
+				};
+			}
+
+			function test(i) {
+				var excn = /[^\x00-\xff]{1,}/g;
+				var exen = /\w{1,}/g;
+				var cn = excn.exec(i);
+				var en = exen.exec(i);
+
+				if(cn==null) {
+					cn="";
+				};
+				if(en==null) {
+					en="";
+				};
+
+				var len = cn.toString().length*2 + en.toString().length;
+				var text = document.getElementById("name");
+				if(len>3 && len<17) {
+					text.style.border = "1px solid #90ee90";
+					point.style.color = "#90ee90";
+					point.innerHTML = "名称格式正确";
+				} else {
+					text.style.border = "1px solid red";
+					point.style.color = "red";
+					point.innerHTML = "长度为4~16个字符";
+				};
+			}
+	</script>
+</body>
+</html>

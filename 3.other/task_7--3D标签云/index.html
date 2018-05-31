@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>标签云</title>
+	<style>
+		.tagCloud{
+			width: 500px;
+			height: 500px;
+			position: fixed;
+			left:50%;
+			top:50%;
+			margin:-250px 0 0 -250px;
+		}
+		.tag{
+			position: absolute;
+			left: 0px;
+			top: 0px;
+			color: #000;
+			display: block;
+			opacity:0;
+			text-decoration: none;
+			font-size: 14px;
+			font-family: "微软雅黑";
+			font-weight: bold;
+		}
+		.tag:hover{
+			border:1px solid #333;
+		}
+	</style>
+</head>
+<body>
+	<form action="" name="set">
+		<div><input type="number" name="speed" placeholder="速度"></div>
+		<div><input type="number" name="count" placeholder="数量"></div>
+		<div><input type="text" name="txt" placeholder="内容"></div>
+		<button id="set">设置</button>
+	</form>
+	<div class="tagCloud" id="tagCloud">
+		<a class="tag" href="http://alvin-liu.github.io/FrontCode/src/vue/index.html">vue</a>
+		<a class="tag" href="http://alvin-liu.github.io/FrontCode/src/baiduife/task0002_1.html">标签处理</a>
+		<a class="tag" href="http://alvin-liu.github.io/FrontCode/src/baiduife/task0002_2.html">倒计时</a>
+		<a class="tag" href="http://alvin-liu.github.io/FrontCode/src/baiduife/task0002_3.html">轮播</a>
+		<a class="tag" href="http://alvin-liu.github.io/FrontCode/src/baiduife/task0002_4.html">仿百度输入提示</a>
+		<a class="tag" href="http://alvin-liu.github.io/FrontCode/src/baiduife/task0002_5.html">可拖动布局</a>
+		<a class="tag" href="http://alvin-liu.github.io/FrontCode/src/hotarea/index.html">热点工具</a>
+		<a class="tag" href="http://alvin-liu.github.io/FrontCode/src/baiduife/taskid29/index.html">输入校验</a>
+		<a class="tag" href="http://alvin-liu.github.io/FrontCode/src/layout/index.html">css布局</a>
+		<a class="tag" href="http://alvin-liu.github.io/FrontCode/src/lazyload/lazyload.html">懒加载</a>
+		<a class="tag" href="http://alvin-liu.github.io/FrontCode/src/snake/index.html">贪吃蛇游戏</a>
+		<a class="tag" href="http://alvin-liu.github.io/FrontCode/src/tagcloud/index.html">3D标签云</a>
+		<a class="tag" href="https://github.com/Alvin-Liu">Github</a>
+		<a class="tag" href="https://github.com/Alvin-Liu/webtool">webtool</a>
+		<a class="tag" href="http://www.limon.space/">blog</a>
+		<a class="tag" href="https://github.com/Alvin-Liu/vGulp">vGulp</a>
+		<a class="tag" href="http://www.limon.space/">Alvin</a>
+	</div>
+	<script src="js/tagcloud.js"></script>
+</body>
+</html>
